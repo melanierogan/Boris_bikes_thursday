@@ -24,8 +24,11 @@ describe DockingStation do
   end
 
   it 'raises an error when dock is empty' do
-
     expect{ ds.release_bike }.to raise_error("No bikes mate")
+  end
+
+  it 'raises an error when dock is full' do
+    expect{ 2.times { ds.dock } }.to raise_error("It's full")
   end
 
 
