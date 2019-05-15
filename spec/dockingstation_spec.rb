@@ -20,7 +20,8 @@ describe DockingStation do
   end
 
   it 'can dock a bike' do
-    expect(ds.dock.length).to eq(1)
+    result = ds.dock(Bike.new)
+    expect(result.length).to eq(1)
   end
 
   it 'raises an error when dock is empty' do
@@ -28,7 +29,7 @@ describe DockingStation do
   end
 
   it 'raises an error when dock is full' do
-    expect{ 2.times { ds.dock } }.to raise_error("It's full")
+    expect{ 2.times { ds.dock(Bike.new) } }.to raise_error("It's full")
   end
 
 

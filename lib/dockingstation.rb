@@ -4,7 +4,7 @@ class DockingStation
   attr_reader :bike, :docked
 
   def initialize
-  @bike = Bike.new
+  # @bike = Bike.new
   @docked = []
   end
 
@@ -12,16 +12,17 @@ class DockingStation
    if @docked.length < 1
     raise "No bikes mate"
    else
-    return @bike
+    # return @bike
+    Bike.new
    end
 
   end
 
-  def dock
+  def dock(bike)
     if @docked.length == 1
       raise "It's full"
     else
-      @docked << @bike
+      @docked << bike
     end
     @docked
   end
