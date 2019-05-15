@@ -19,11 +19,8 @@ class DockingStation
   end
 
   def dock(bike)
-    if @docked.length == 1
-      raise "It's full"
-    else
-      @docked << bike
-    end
+    raise "It's full" if @docked.length >= 20
+    @docked << bike
     # @docked
   end
 end
