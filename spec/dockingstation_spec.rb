@@ -29,7 +29,9 @@ describe DockingStation do
   end
 
   it 'raises an error when dock is full' do
-    expect{ 2.times { ds.dock(Bike.new) } }.to raise_error("It's full")
+    newStation = ds
+    20.times { newStation.dock(Bike.new) }
+    expect{ newStation.dock(Bike.new) }.to raise_error("It's full")
   end
 
 

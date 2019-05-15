@@ -24,6 +24,6 @@ class DockingStation
     else
       @docked << bike
     end
-    @docked
+    # @docked
   end
 end
