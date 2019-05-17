@@ -12,9 +12,16 @@ class DockingStation
 
   end
 
+
   def release_bike
-    raise "No bikes mate" if empty?
+    # raise "No bikes mate" if empty?
+    # raise "It's broken!" if broken 
+    # docked.pop
+
+    # pseudo code: i want to release a bike unless the bike is broken or if the dock is empty 
+    raise "No bikes mate" if @empty? if @broken then raise "It's broken!" end
     docked.pop
+
   end
 
   def dock(bike)
